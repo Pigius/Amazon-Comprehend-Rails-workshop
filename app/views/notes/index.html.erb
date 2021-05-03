@@ -1,0 +1,20 @@
+<section class="py-5">
+  <div class="container">
+    <h1>Amazon Comprehend Rails workshop</h1>
+
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <%= render "form" %>
+
+    <div id="container">
+      <div id="row mb-5">
+          <h2 class="mb-3 fs-1 fw-bold">
+            <span class="text-primary">Notes</span>
+          </h2>
+          <%= render partial: "note", collection: @notes %>
+      </div>
+    </div>
+  </div>
+</section>
