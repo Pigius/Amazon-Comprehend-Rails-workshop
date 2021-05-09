@@ -1,24 +1,27 @@
-# README
+# Amazon Comprehend Rails Workshop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### A simple Rails app that will be used for purpose of workshop while using Amazon Comprehend service from the AWS to:
 
-Things you may want to cover:
+Within the app, you can create a note via form, and underneath all notes could be found.
 
-* Ruby version
+[Link to the blog](https://danielaniszkiewicz.com)
 
-* System dependencies
+  
+## Project Setup
 
-* Configuration
 
-* Database creation
+### Ruby Environment
+- Set up a ruby version manager. rvm or rbenv ( rvm preferred )
+    + https://rvm.io/rvm/install
+    + rvm get stable
 
-* Database initialization
 
-* How to run the test suite
+### Application Setup
+- `bundle install` (install all ruby gems for the project)
+- `rake db:create` (create database)
+- `rake db:migrate` (load schema)
+- `rake db:seed` (seed the database with one dummy note)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+### Running Application
+- Start app server: `rails s`
