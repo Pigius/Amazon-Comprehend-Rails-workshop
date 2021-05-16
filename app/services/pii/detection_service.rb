@@ -6,7 +6,7 @@ module Pii
       @note = note
       @comprehend_client = Aws::Comprehend::Client.new(region: 'eu-central-1')
       @detection_result = []
-      @detection_entities = []
+      @detected_entities = []
       @redacted_note = nil
     end
 
@@ -14,13 +14,13 @@ module Pii
       result = detect_pii_entities(note.content)
       if pii_detected?(result)
         @detection_result = result.entities
-        @detection_entities = build_detection_details(detection_result, note.content)
+        @detected_entities = build_detection_details(detection_result, note.content)
         @redacted_note = redact_note(@detection_result, note.content)
       end
       self
     end
 
-    attr_reader :comprehend_client, :note, :detection_result, :detection_entities, :redacted_note
+    attr_reader :comprehend_client, :note, :detection_result, :detected_entities, :redacted_note
 
     private
 
