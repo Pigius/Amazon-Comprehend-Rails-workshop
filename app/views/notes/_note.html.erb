@@ -3,7 +3,16 @@
     <div class="row align-items-center">
       <div class="mb-2 col-12 col-lg-2 align-self-start fw-bold text-center">Note ID: <%= note.id %></div>
         <div class="col-12 col-lg-8">
-        <p class="lh-lg"><%= note.content %></p>
+        <p class="lh-lg"><b>Content: </b><%= note.content %></p>
+        <p class="lh-lg"><b>Detected PII entities: </b>
+        <ul class="list-group">
+          <% note.detected_pii_entities.each do |entity| %>
+            <li><%= entity %></li>
+          <% end %>
+        </ul>
+        </p>
+        <p class="lh-lg"><b>Redacted content: </b><%= note.redacted_content %></p>
+
         </div>
       </div>
     </div>
